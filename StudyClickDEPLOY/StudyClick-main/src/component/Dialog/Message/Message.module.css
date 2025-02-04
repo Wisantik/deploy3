@@ -1,0 +1,50 @@
+.ai_text_block{
+    width: 100% ;
+    margin-top: 10px ;
+    background-color: rgb(176, 154, 154);
+    height: min-content;
+    border-radius: 3%;
+    display: flex;
+    margin-left: 5%;
+    padding: 3px;
+
+}
+.user_text_block{
+    width: 100% ;
+    margin-top: 10px ;
+    background-color: rgb(141 225 224);
+    height: min-content;
+    border-radius: 3%;
+    display: flex;
+    margin-left: 5%;
+    padding: 3px;
+}
+.message_text{
+    font-size: 18px;
+}
+.ai{
+    display: flex;
+    margin-bottom: 10px;
+}
+.ai_ava{
+    width: 40px;
+    height: 40px;
+    background-color: rgb(127, 127, 216);
+    border-radius: 50%;
+    margin-left: 12px;
+    margin-right: 3px;
+}
+.ai_ava_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.user_ava{
+    width: 40px;
+    height: 40px;
+    background-color: gray;
+    border-radius: 50%;
+    margin-left: 12px;
+    margin-right: 3px;
+}

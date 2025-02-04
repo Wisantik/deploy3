@@ -1,0 +1,9 @@
+.App{
+    margin: 0 auto;
+    width:80%;
+    background-color: #e9e6e6;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}

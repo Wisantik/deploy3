@@ -1,0 +1,83 @@
+.dialog{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.dialog_input{
+    width: 60%;
+    height: 100%;
+    background-color: #dfd6d7;
+    border: 1px solid firebrick;
+}
+
+.input_wrapper{
+    width: 100%;
+    display: flex;
+   align-items: center;
+   justify-content: center;
+    gap: 10px;
+    margin-bottom: 3%;
+    flex-direction: row;
+}
+.input_btn{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    height: 100%;
+    font-size: 11px;
+    border: none;
+    background-color: white;
+}
+.user_window{
+    width: 90%;
+    margin: 5% auto;
+    background-color: rgb(255, 255, 255);
+    height: 100%;
+    border-radius: 5%; 
+    height: 80vh;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    overflow-x: hidden;
+    padding-right: 19%;
+}
+.ai_img{
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    margin-left: 1px;
+}
+.dialog_window{
+    display: flex;
+    gap: 4%;
+    height: min-content;
+    width: 93%;
+    justify-content: space-between;
+}
+.prompt{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.prompt_block{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-right: 10px;
+    height: 80vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+.prompt_name{
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    color: black;
+}
+.window_input{
+    display: flex;
+    flex-direction: column;
+}

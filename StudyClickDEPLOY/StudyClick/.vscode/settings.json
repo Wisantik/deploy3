@@ -1,0 +1,24 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/__pycache__": true
+    },
+    
+    "hide-files.files": [],
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.autopep8"
+    },
+    "cody.dev.models": [
+        {
+            "provider": "openai",
+            "model": "gpt-3.5-turbo",
+            "apiKey": "sk-IdmJMXNU1gZPbd1Isu38a1IqFVW3jZQ0",
+            "apiEndpoint": "https://api.proxyapi.ru/openai/v1"
+        }
+    ]
+}
