@@ -1,5 +1,7 @@
 # version: '3.8'
 # Поднимаем два сервиса, django И node
+networks:
+  my_network:
 services:
   postgres:
     # Так же разворачиваем с готового контейнера
@@ -11,6 +13,20 @@ services:
 
     env_file:
       - StudyClick/.env
+    networks:
+      - my_network
+
+  ngnix:
+    image: nginx:stable-alpine
+    ports:
+      - "80:80"
+    volumes:
+      - './nginx.conf:/etc/nginx/nginx.conf'
+    depends_on:
+      - django
+      - node
+    networks:
+      - my_network
   django:
 
     build: ./StudyCLick
@@ -32,6 +48,8 @@ services:
       - postgres
     env_file:
       - StudyCLick/.env
+    networks:
+      - my_network
 
 
   node:
@@ -53,6 +71,9 @@ services:
     volumes:
       - ./StudyCLick-main/public/:/usr/src/app/public/
       - ./StudyCLick-main/src/:/usr/src/app/src/
+    networks:
+      - my_network
+
 # создаём два volume для статики
 volumes:
   postgres_volume:
