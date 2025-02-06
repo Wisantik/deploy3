@@ -3,12 +3,14 @@ import s from "./Dialog.module.css";
 import Message from "./Message/Message";
 import Prompt from "../Aside_propmpt/Prompt";
 import ai_logo from "../../image/ai_logo.png"
+import { useMemo } from "react";
 const Dialog = (props) => {
+  const id = localStorage.getItem("session_id")
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(false);
   useEffect(() => {
-    props.getHistoryChat(props.session_id);
-  }, [props.session_id, props.active]);
+      props.getHistoryChat(id);
+  }, [id, props.active]);
   useEffect(() => {
     props.PromptThunk(props.study_field_id);
   }, []);
@@ -17,7 +19,7 @@ const Dialog = (props) => {
     props.createMessage(
       message,
       props.historyId,
-      props.session_id,
+      id,
       props.study_field_id
     );
     setMessage("");
@@ -28,13 +30,16 @@ const Dialog = (props) => {
       props.createMessage(
         message,
         props.historyId,
-        props.session_id,
+        id,
         props.study_field_id
       );
       setMessage("");
     }
   };
-  props.message.length == 2 && props.setTitleChat(props.session_id)
+  useMemo(() => {
+    props.message.length == 2 & message == ""  && props.setTitleChat(props.session_id)
+  })
+
   return (
     <div className={s.dialog}>
       <div className={s.dialog_window}>
@@ -49,7 +54,7 @@ const Dialog = (props) => {
             {props.prompt.map((e) => (
               <Prompt
                 study_field_id={props.study_field_id}
-                session_id={props.session_id}
+                session_id={id}
                 historyId={props.historyId}
                 createMessage={props.createMessage}
                 item={e}
