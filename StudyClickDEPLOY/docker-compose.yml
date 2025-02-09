@@ -29,7 +29,7 @@ services:
       - my_network
   django:
 
-    build: ./StudyCLick
+    build: ./StudyClick
 
     container_name: djangoapp
     # перезапускать контейнер при завершении выполнения работы или при аварийном завершении
@@ -47,14 +47,14 @@ services:
     depends_on:
       - postgres
     env_file:
-      - StudyCLick/.env
+      - StudyClick/.env
     networks:
       - my_network
 
 
   node:
     # Аналогично, build из ./reactapp/dockerfile
-    build: ./StudyCLick-main
+    build: ./StudyClick-main
     # имя контейнера
     container_name: reactap
     # рестарт
@@ -69,8 +69,8 @@ services:
       - django
     # Сеть та же, все контейнеры должны крутиться в однйо сети чтобы видеть друг друга.
     volumes:
-      - ./StudyCLick-main/public/:/usr/src/app/public/
-      - ./StudyCLick-main/src/:/usr/src/app/src/
+      - ./StudyClick-main/public/:/usr/src/app/public/
+      - ./StudyClick-main/src/:/usr/src/app/src/
     networks:
       - my_network
 

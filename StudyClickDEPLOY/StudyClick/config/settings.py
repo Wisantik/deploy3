@@ -154,7 +154,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # spectakular
 ###################################
 SPECTACULAR_SETTINGS = {
-    'TITLE': 'StudyCLick',
+    'TITLE': 'StudyClick',
     'DESCRIPTION': 'API обучающей платформы с AI',
     'VERSION': '1.0.0',
     'SERVE_PERMISSIONS': [
