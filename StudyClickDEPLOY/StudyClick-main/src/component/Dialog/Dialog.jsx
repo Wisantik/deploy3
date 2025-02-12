@@ -1,65 +1,74 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useCallback } from "react";
 import s from "./Dialog.module.css";
 import Message from "./Message/Message";
 import Prompt from "../Aside_propmpt/Prompt";
-import ai_logo from "../../image/ai_logo.png"
+import ai_logo from "../../image/ai_logo.png";
 import { useMemo } from "react";
+
 const Dialog = (props) => {
-  const id = localStorage.getItem("session_id")
+  const id = localStorage.getItem("session_id");
+  const history = localStorage.getItem("history_id");
+  const field_id = localStorage.getItem("study_field_id");
   const [message, setMessage] = useState("");
   const [disabled, setDisabled] = useState(false);
+
   useEffect(() => {
-      props.getHistoryChat(id);
-  }, [id, props.active]);
+    props.getHistoryChat(id);
+  }, [id, props.getHistoryChat]);
+
   useEffect(() => {
-    props.PromptThunk(props.study_field_id);
-  }, []);
-  const sendMessage = (event) => {
+    props.PromptThunk(field_id);
+  }, [field_id, props.PromptThunk]);
+
+  const sendMessage = useCallback(() => {
+    if (message.trim() === "") return;
     setDisabled(true);
-    props.createMessage(
-      message,
-      props.historyId,
-      id,
-      props.study_field_id
-    );
+    props.createMessage(message, history, id, field_id);
     setMessage("");
     setDisabled(false);
-  };
-  const handleKeyPress = (event) => {
-    if (event.key === "Enter") {
-      props.createMessage(
-        message,
-        props.historyId,
-        id,
-        props.study_field_id
-      );
-      setMessage("");
-    }
-  };
-  useMemo(() => {
-    props.message.length == 2 & message == ""  && props.setTitleChat(props.session_id)
-  })
+  }, [message, history, id, field_id, props.createMessage]);
 
+  const handleKeyPress = useCallback((event) => {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  }, [sendMessage]);
+
+
+  useEffect(() => {
+    if (props.message.length === 2 && message === "") {
+      props.setTitleChat(id);
+    }
+  }, [props.message.length, message, id, props.setTitleChat]);
+
+  const messages = useMemo(() => {
+    return props.message.filter((e) => e.message !== "").map((e) => <Message key={e.id} item={e} />);
+  }, [props.message]);
+
+
+  if (props.dialogs_data.length === 0) {
+    return <div></div>;
+  }
   return (
     <div className={s.dialog}>
       <div className={s.dialog_window}>
         <div className={s.user_window}>
-          {props.message.length > 1 &&
-            props.message.map((e) => e.message != "" && <Message item={e} />)}
+          {props.message.length > 1 && messages} {/* Use memoized messages */}
         </div>
         <div className={s.prompt}>
-            <span className={s.prompt_name}>Примеры запросов</span>
+          <span className={s.prompt_name}>Примеры запросов</span>
           <div className={s.prompt_block}>
-            <ul class="list-group">
-            {props.prompt.map((e) => (
-              <Prompt
-                study_field_id={props.study_field_id}
-                session_id={id}
-                historyId={props.historyId}
-                createMessage={props.createMessage}
-                item={e}
-              />
-            ))}
+            <ul className="list-group">
+              {props.prompt.map((e) => (
+                <Prompt
+                  key={e.id} // Add key prop for React
+                  study_field_id={field_id}
+                  session_id={id}
+                  historyId={history}
+                  createMessage={props.createMessage}
+                  item={e}
+                />
+              ))}
             </ul>
           </div>
         </div>
@@ -71,6 +80,7 @@ const Dialog = (props) => {
           onChange={(e) => setMessage(e.target.value)}
           className={s.dialog_input}
           type="text"
+          placeholder="Введите сообщение..." // Added placeholder for better UX
         />
         <button
           className={s.input_btn}
@@ -78,10 +88,11 @@ const Dialog = (props) => {
           onClick={sendMessage}
         >
           Отправить
-          <img className={s.ai_img} src={ai_logo}/>
+          <img className={s.ai_img} src={ai_logo} alt="AI Logo" /> {/* Added alt text for accessibility */}
         </button>
       </div>
     </div>
   );
 };
+
 export default Dialog;

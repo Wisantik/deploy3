@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api_obj = axios.create({
-    baseURL: "http://127.0.0.1:8000/api/",
+    baseURL: "http://45.89.189.58/api/api/",
     withCredentials:true,
 })
 export const getFields = () => {

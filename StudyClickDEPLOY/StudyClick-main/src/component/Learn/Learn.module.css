@@ -1,15 +1,44 @@
+@media(max-width:100000px){
+    .learn_block{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-bottom: 30%;
+        align-items: center;
+    
+    }
+    .wrapper{
+        display: flex;
+        width: 100%;
+        justify-content: center;
+    }
+    .learn_block div ul {
+        
+        margin-left: 10px;
+
+    }
+}
+@media(max-width:480px){
+   
+    .learn_block div button {
+        padding: 2px;
+        width: 20vw;
+        word-break: break-all;
+        font-size: 10px;
+        white-space: wrap;
+
+    }
+    
+    .wrapper{
+        width: 20vw;
+    }
+}
 .wrapper{
     display: flex;
     width: 100%;
     justify-content: center;
 }
-.learn_block{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: 30%;
 
-}
 .learn_header, .learn_header_active{
     font-size: 220%;
 }

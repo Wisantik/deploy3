@@ -19,10 +19,25 @@ environ.Env.read_env(os.path.join('.env'))
 # BASE_DIR = Path('.env/')
 
 # просто для правильной работы
-# CSRF_TRUSTED_ORIGINS = env('CSRF_TRUSTED_ORIGINS').split()
+CSRF_TRUSTED_ORIGINS = [
+    'http://127.0.0.1',
+    'http://localhost',
+    'http://localhost:3000',
+    'http://45.89.189.58',
+    'http://127.0.0.1:8000',
+    'http://django:8000',  # Если используется контейнеризация, например, Docker
+    # HTTPS версии, если они будут задействованы
+    'https://45.89.189.58',
+]
 SECRET_KEY = env('SECRET_KEY')
 DEBUG = env.bool('DEBUG', default=False)
-ALLOWED_HOSTS = env.str('ALLOWED_HOSTS', default='').split(' ')
+ALLOWED_HOSTS = [
+    '127.0.0.1',      
+    'localhost',      
+    'localhost:3000', 
+    '45.89.189.58',   
+    'django',         # Имя контейнера в Docker
+]
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
 

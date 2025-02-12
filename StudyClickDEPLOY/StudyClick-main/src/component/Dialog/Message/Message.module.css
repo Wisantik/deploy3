@@ -1,50 +1,97 @@
-.ai_text_block{
-    width: 100% ;
-    margin-top: 10px ;
-    background-color: rgb(176, 154, 154);
-    height: min-content;
-    border-radius: 3%;
-    display: flex;
-    margin-left: 5%;
-    padding: 3px;
+@media(max-width:10000000000px){
+    .ai_text_block{
+        width: 20vw ;
+        margin-top: 10px ;
+        background-color: rgb(176, 154, 154);
+        height: min-content;
+        border-radius: 3%;
+        display: flex;
+        margin-left: 5%;
+        padding: 3px;
+    
+    }
+    .user_ava{
+        width: 40px;
+        height: 40px;
+        background-color: gray;
+        border-radius: 50%;
+        margin-left: 12px;
+        margin-right: 3px;
+    }
+    .ai_ava{
+        width: 40px;
+        height: 40px;
+        background-color: rgb(127, 127, 216);
+        border-radius: 50%;
+        margin-left: 12px;
+        margin-right: 3px;
+        word-break: break-all;
+    }
+    .user_text_block{
+        width: 40vw ;
+        margin-top: 10px ;
+        background-color: rgb(141 225 224);
+        height: min-content;
+        border-radius: 3%;
+        display: flex;
+        margin-left: 5%;
+        padding: 3px;
+        word-break: break-all;
+    }
+    .message_text{
+        font-size: 18px;
+    }
+}
+@media(max-width:768px){
+    .user_text_block{
+        width: 30vw;
+    }
+    .ai_ava{
+        width: 7vw;
+        height: 7vw;
+    }
+    .user_ava{
+        width: 7vw;
+        height: 7vw;
+    }
+    .ai_ava_block div{
+        font-size: 12px;
+    }
 
 }
-.user_text_block{
-    width: 100% ;
-    margin-top: 10px ;
-    background-color: rgb(141 225 224);
-    height: min-content;
-    border-radius: 3%;
-    display: flex;
-    margin-left: 5%;
-    padding: 3px;
+@media(max-width:480px){
+    .user_text_block{
+        width: 20vw;
+
+        font-size: 10px
+        
+    }
+    .ai_ava{
+        width: 6vw;
+        height: 6vw;
+    }
+    .user_ava{
+        width: 6vw;
+        height: 6vw;
+    }
+    .message_text{
+        font-size: 12px;
+    }
+    .ai_ava{
+
+    }
 }
-.message_text{
-    font-size: 18px;
-}
+
+
+
 .ai{
     display: flex;
     margin-bottom: 10px;
 }
-.ai_ava{
-    width: 40px;
-    height: 40px;
-    background-color: rgb(127, 127, 216);
-    border-radius: 50%;
-    margin-left: 12px;
-    margin-right: 3px;
-}
+
 .ai_ava_block{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-}
-.user_ava{
-    width: 40px;
-    height: 40px;
-    background-color: gray;
-    border-radius: 50%;
-    margin-left: 12px;
-    margin-right: 3px;
 }

@@ -20,6 +20,7 @@ const DialogContainer = (props) => {
       PromptThunk = {props.PromptThunk}
       active = {props.active}
       setTitleChat = {props.setTitleChat}
+      dialogs_data = {props.dialogs_data}
     />
   );
 };
@@ -29,7 +30,8 @@ const mapStateToProps = (state) => ({
   study_field_id: state.learn.current_field.id,
   historyId: state.dialogs.history_id,
   prompt: state.prompt.prompt,
-  active:state.messages.messages_data.active
+  active:state.messages.messages_data.active,
+  dialogs_data: state.dialogs.dialogs_data
 });
 export default connect(mapStateToProps, { createMessage, getHistoryChat, PromptThunk, setTitleChat })(
   DialogContainer

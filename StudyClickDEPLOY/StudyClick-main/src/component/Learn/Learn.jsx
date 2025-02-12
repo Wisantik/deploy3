@@ -12,6 +12,7 @@ const Learn = ({ getCurrentFields, learn, setFieldId, AddDialogs,setId }) => {
     AddDialogs("New chat", session_id)
     setId(session_id)
     localStorage.setItem("session_id",session_id)
+    localStorage.setItem("study_field_id",element.id)
   }
   return (
     <div className={s.wrapper}>

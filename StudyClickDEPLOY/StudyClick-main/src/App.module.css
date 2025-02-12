@@ -5,5 +5,27 @@
     height: 100%;
     display: flex;
     flex-direction: row;
+    
     gap: 10px;
+}
+@media (max-width:1200px){
+    .App{
+        width: 1000px;
+        
+    }
+}
+@media (max-width:1000px){
+    .App{
+        width: 768px;
+    }
+}
+@media (max-width:768px){
+    .App{
+        width: 480px;
+    }
+}
+@media (max-width:480px){
+    .App{
+        width: 100%;
+    }
 }

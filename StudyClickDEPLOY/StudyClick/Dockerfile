@@ -22,3 +22,6 @@ RUN pip install -r requirements.txt
 
 # копируем всё что осталось.
 COPY . .
+
+# Настройка записи и доступа
+# RUN chmod -R 777 ./
