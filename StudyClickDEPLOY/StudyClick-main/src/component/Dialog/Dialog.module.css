@@ -98,14 +98,8 @@
         font-size: 16px;
         width:17vw  ;
     }
-    .dialog div{
-        font-size: 14px;
-    }
 }
 @media (max-width:768px){
-    .dialog div{
-        font-size: 9px;
-    }
     .user_window{
         width: 300px;
     }
@@ -139,9 +133,6 @@
     }
 }
 @media (max-width:480px){
-    .dialog div{
-        font-size: 9px;
-    }
     .ai_img{
         width: 8px;
         height: 8px;

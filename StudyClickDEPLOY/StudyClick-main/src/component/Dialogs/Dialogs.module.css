@@ -6,6 +6,15 @@
         font-size: 120%;
         display: block;
     }
+    .dialog{
+        height: min-content;
+        background-color: aliceblue;
+        margin: 8px 5px 0 5px;
+        transition: .5s;
+        padding: 5px 0 0 5px;
+        display: flex;
+        gap: 4px;
+    }
     .navigate {
         display: block;
         text-decoration: none;
@@ -20,10 +29,13 @@
     }
     .dialog div{
         font-size: 17px;
+        word-break: break-all;
     }
 }
 @media(max-width:1000px){
-    
+    .dialog div{
+        font-size: 14px;
+    }
     .delete_btn{
         width: 20px;
         height: 20px;
@@ -32,8 +44,11 @@
     }
 }
 @media(max-width:768px){
-    .navigate{
-        width: min-content;
+    .dialog{
+        word-break: break-all;
+    }
+    .dialog div{
+        font-size: 9px;
     }
     .delete_btn{
         width: 20px;
@@ -49,27 +64,17 @@
     }
 }
 @media(max-width:480px){
-    
+    .dialog div{
+        font-size: 9px;
+    }
     .delete_btn{
         width: 12px;
         height: 12px;
         margin-right: 3px;
         align-items: center;
     }
-    .dialog div{
-        font-size: 12px;
-    }
 }
-.dialog{
-    width: 85%;
-    height: min-content;
-    background-color: aliceblue;
-    margin: 8px 5px 0 5px;
-    transition: .5s;
-    padding: 5px 0 0 5px;
-    display: flex;
-    gap: 4px;
-}
+
 .dialog:hover{
     cursor: pointer;
     transform: scale(1.05);
