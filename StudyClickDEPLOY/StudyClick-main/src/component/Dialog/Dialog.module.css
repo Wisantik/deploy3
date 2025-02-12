@@ -1,6 +1,13 @@
 @media (max-width:1000000000000px){
+    .prompt div ul div li{
+        padding: 3px;
+        font-size: 16px;
+    }
+    .prompt div ul {
+        width: 15vw;
+    }
     .dialog{
-        width: 50vw;
+        width: 62vw;
         display: flex;
         flex-direction: column;
     }
@@ -16,11 +23,10 @@
         gap: 10px;
         margin-right: 10px;
         height: 80vh;
-        overflow: scroll;
-        overflow-x: hidden;
+        width: 19vw;
     }
     .prompt{
-        width: 10vw;
+        width: 15vw;
         
     }
     .user_window{
@@ -35,26 +41,27 @@
         flex-direction: column;
         overflow-x: hidden;
     }
-    .dialog_window{
-        
-        width: 60vw;
-        
+    .dialog_window{  
+        width: 66vw;
     }
 }
-
+@media(max-width:1630px){
+    .dialog_window{  
+        width: 62vw;
+    }
+}
 @media (max-width:1200px){
     .dialog{
         width: 90vw;
         
     }
     .prompt_block{
+        width: 23vw;
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin-right: 10px;
         height: 80vh;
-        overflow: scroll;
-        overflow-x: hidden;
     }
     .user_window{
         width: 90%;
@@ -85,11 +92,11 @@
         width: 100%;
     }
     .prompt_block{
-        width: 10vw;
+        width: 16vw;
     }
     .prompt div ul div li{
         font-size: 16px;
-        width: 8vw  ;
+        width:17vw  ;
     }
 }
 @media (max-width:768px){
@@ -105,27 +112,23 @@
         width: 400px;
     }
     .dialog_window{
-        width: 100%;
-    }
-    .prompt div{
-        width: min-content;
+        width: 97%;
     }
     .prompt span{
         font-size: 12px;
-        width: 10vw;
+        width: 13vw;
     }
     .prompt_block{
+        width: 16vw;
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin-right: 10px;
         height: 80vh;
-        overflow: scroll;
-        overflow-x: hidden;
     }
     .prompt div ul div li{
-        font-size: 14px;
-        width: 8vw  ;
+        font-size: 12px;
+        width:13vw  ;
     }
 }
 @media (max-width:480px){
@@ -135,38 +138,37 @@
         background-color: transparent;
         margin-left: 1px;
     }
+    .prompt_name{
+        font-size: 12px;
+    }
     .dialog{
         width: 90vw;
         
     }
     .user_window{
-        width: 40vw;
+        width: 46vw;
     }
     .prompt div ul div li{
         font-size: 9px;
-        width: 8vw  ;
+        width: 23vw  ;
     }
     .prompt span{
-        font-size: 12px;
-        width: 10vw;
+        font-size: 10px;
+        width: 25vw;
     }
     .prompt_block{
+        width: 25vw;
         display: flex;
         flex-direction: column;
         gap: 10px;
         margin-right: 10px;
         height: 80vh;
-        overflow: scroll;
-        overflow-x: hidden;
     }
 }
-.prompt div ul div li{
-    padding: 3px;
-}
+
 .dialog_window{
-    justify-content: space-around;
     display: flex;
-    gap: 4%;
+    gap: 1%;
     height: min-content;
 }
 .dialog_input{

@@ -1,6 +1,6 @@
 @media(max-width:10000000000px){
     .ai_text_block{
-        width: 40vw ;
+        width: 32vw ;
         margin-top: 10px ;
         background-color: rgb(176, 154, 154);
         height: min-content;
@@ -45,12 +45,15 @@
     }
 }
 @media(max-width:768px){
+    .ai_text_block{
+        width: 34vw;
+    }
     .user_text_block{
         width: 30vw;
     }
     .ai_ava{
-        width: 7vw;
-        height: 7vw;
+        width: 4vw;
+        height: 4vw;
     }
     .user_ava{
         width: 7vw;
@@ -63,10 +66,13 @@
 }
 @media(max-width:480px){
     .user_text_block{
-        width: 20vw;
+        width: 27vw;
 
         font-size: 10px
         
+    }
+    .ai_text_block{
+        width: 27vw;
     }
     .ai_ava{
         width: 6vw;

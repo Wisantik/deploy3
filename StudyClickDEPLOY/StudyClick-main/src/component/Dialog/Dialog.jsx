@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from "react";
+import React, { useEffect, useState, useCallback, useRef } from "react";
 import s from "./Dialog.module.css";
 import Message from "./Message/Message";
 import Prompt from "../Aside_propmpt/Prompt";
@@ -46,6 +46,17 @@ const Dialog = (props) => {
   }, [props.message]);
 
 
+  const messagesEndRef = useRef(null);
+  const scrollToBottom = useCallback(() => {
+    if (messagesEndRef.current) {
+      messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  }, []);
+  
+  useEffect(() => {
+    scrollToBottom();
+  }, [props.message, scrollToBottom]);
+  
   if (props.dialogs_data.length === 0) {
     return <div></div>;
   }
@@ -54,6 +65,8 @@ const Dialog = (props) => {
       <div className={s.dialog_window}>
         <div className={s.user_window}>
           {props.message.length > 1 && messages} {/* Use memoized messages */}
+
+        <div ref={messagesEndRef} style={{ float: "left", clear: "both" }} />
         </div>
         <div className={s.prompt}>
           <span className={s.prompt_name}>Примеры запросов</span>
