@@ -5,7 +5,6 @@
         justify-content: center;
         margin-bottom: 30%;
         align-items: center;
-    
     }
     .wrapper{
         display: flex;
@@ -13,26 +12,26 @@
         justify-content: center;
     }
     .learn_block div ul {
-        
         margin-left: 10px;
-
     }
 }
+
 @media(max-width:480px){
-   
     .learn_block div button {
         padding: 2px;
         width: 20vw;
-        word-break: break-all;
+        word-break: break-all;        /* оставлено, для переноса слов */
         font-size: 10px;
-        white-space: wrap;
-
+        white-space: normal;         /* изменено с wrap на normal */
+        overflow-wrap: break-word;   /* добавлено для переноса длинных слов */
+        hyphens: auto;               /* добавлено для автоматического переноса слов */
     }
     
     .wrapper{
         width: 20vw;
     }
 }
+
 .wrapper{
     display: flex;
     width: 100%;
@@ -42,15 +41,18 @@
 .learn_header, .learn_header_active{
     font-size: 220%;
 }
+
 .learn_header:hover{
     cursor: pointer;
 }
+
 .btn_block{
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin-top: 5%;
 }
+
 .learn_btn {
     font-size: 180%;
     width: 100%;
@@ -60,12 +62,15 @@
     text-decoration: none;
     display: flex;
     justify-content: center;
+    overflow-wrap: break-word;  /* добавлено для переноса текста в кнопке */
+    hyphens: auto;              /* добавлено для автоматического переноса текста в кнопке */
 }
 
 .list_btn{
     width: 10%;
     height: 10%;
 }
+
 .field a{
     text-decoration: none;
     color: black;
@@ -73,7 +78,10 @@
     margin-right: 2px;
     font-weight: 700;
     transition: 0.6s;
+    overflow-wrap: break-word;  /* добавлено, если ссылки длинные */
+    hyphens: auto;              /* добавлено для автоматического переноса ссылок */
 }
+
 .field a:hover{
     cursor: pointer;
     color: orange;
