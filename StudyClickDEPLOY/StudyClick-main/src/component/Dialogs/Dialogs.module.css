@@ -29,7 +29,8 @@
     }
     .dialog div{
         font-size: 17px;
-        word-break: break-all;
+        overflow-wrap: break-word;
+        hyphens: auto; 
     }
 }
 @media(max-width:1000px){
@@ -45,7 +46,8 @@
 }
 @media(max-width:768px){
     .dialog{
-        word-break: break-all;
+        overflow-wrap: break-word;
+        hyphens: auto;
     }
     .dialog div{
         font-size: 9px;
