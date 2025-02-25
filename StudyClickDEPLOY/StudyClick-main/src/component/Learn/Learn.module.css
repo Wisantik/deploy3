@@ -20,7 +20,7 @@
     .learn_block div button {
         padding: 2px;
         width: 20vw;
-        word-break: break-all;        /* оставлено, для переноса слов */
+        /* word-break: break-all;        оставлено, для переноса слов */
         font-size: 10px;
         white-space: normal;         /* изменено с wrap на normal */
         overflow-wrap: break-word;   /* добавлено для переноса длинных слов */
